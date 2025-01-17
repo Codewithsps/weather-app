@@ -9,7 +9,7 @@ const wind = document.querySelector('#city-wind');
 const img = document.querySelector('#icon');
 
 async function getData(cityName) {
-    const promise = await fetch(`http://api.weatherapi.com/v1/current.json?key=946b317146ae419793c131016251201&q=${cityName}&aqi=yes`);
+    const promise = await fetch(`http://api.weatherapi.com/v1/current.json?key={api keys}&q=${cityName}&aqi=yes`);
     return await promise.json();
 }
 
@@ -25,5 +25,4 @@ btn.addEventListener('click', async () => {
     wind.innerText = `Wind : ${result.current.wind_kph} km/h`;
     img.src = result.current.condition.icon;
 });
-
 
